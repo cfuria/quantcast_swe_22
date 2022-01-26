@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+COOKIEFILE=${1?No log inputted.}
+
+while getopts d: flag
+do
+    case "${flag}" in
+        d) DATE=${OPTARG?No date inputted.};;
+    esac
+done
+
+java ActiveCookie $COOKIEFILE $DATE
