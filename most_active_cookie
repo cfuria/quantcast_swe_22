@@ -2,11 +2,13 @@
 
 COOKIEFILE=${1?No log inputted.}
 
-while getopts d: flag
+subcommand=$1; shift
+while getopts ":d:" flag
 do
     case "${flag}" in
         d) DATE=${OPTARG?No date inputted.};;
     esac
 done
 
+javac ActiveCookie.java
 java ActiveCookie $COOKIEFILE $DATE

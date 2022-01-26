@@ -4,11 +4,12 @@ import java.time.*;
 
 public class ActiveCookie {
     public static void main(String[] args) throws IOException {
+        System.out.println(Arrays.toString(args));
         String fileName = args[0];
         HashMap<String, List<ZonedDateTime>> cookieInstances = readCSV(fileName);
         LocalDate targetDate = LocalDate.parse(args[1]);
 
-        int maxFrequency = 0;
+        int[] maxFrequency = {0};
         ArrayList<String> mostCommonCookies = new ArrayList<>();
         cookieInstances.forEach((cookie, timeStamps) -> {
             int frequency = 0;
@@ -18,10 +19,12 @@ public class ActiveCookie {
                 }
             }
 
-            if (maxFrequency == frequency && frequency > 0) {
+            if (maxFrequency[0] == frequency && frequency > 0) {
                 mostCommonCookies.add(cookie);
-            } else {
+            } else if (maxFrequency[0] < frequency) {
+                maxFrequency[0] = frequency;
                 mostCommonCookies.removeAll(mostCommonCookies);
+                mostCommonCookies.add(cookie);
             }
         });
         
