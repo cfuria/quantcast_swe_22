@@ -19,9 +19,9 @@ Expected Output:
 No date or log inputted.
 ```
 
-Test 3: Neither a csv file or date is inputted.
+Test 3: Neither a csv file nor date is inputted.
 ```
-./most_active_cookie cookie_log.csv
+./most_active_cookie
 ```
 Expected Output:
 ```
