@@ -4,7 +4,6 @@ import java.time.*;
 
 public class ActiveCookie {
     public static void main(String[] args) throws IOException {
-        System.out.println(Arrays.toString(args));
         String fileName = args[0];
         HashMap<String, List<ZonedDateTime>> cookieInstances = readCSV(fileName);
         LocalDate targetDate = LocalDate.parse(args[1]);

@@ -1,14 +1,18 @@
 #!/usr/bin/env bash
 
-COOKIEFILE=${1?No log inputted.}
+COOKIEFILE=${1?No date or log inputted.}
 
 subcommand=$1; shift
 while getopts ":d:" flag
 do
     case "${flag}" in
-        d) DATE=${OPTARG?No date inputted.};;
+        d) DATE=${OPTARG};;
     esac
 done
 
-javac ActiveCookie.java
-java ActiveCookie $COOKIEFILE $DATE
+if [[ $DATE == "" ]]; then
+    echo "No date or log inputted."
+else
+    javac ActiveCookie.java
+    java ActiveCookie $COOKIEFILE $DATE
+fi
