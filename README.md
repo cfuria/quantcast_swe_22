@@ -30,7 +30,7 @@ No date or log inputted.
 
 Test 4: No cookies logged.
 ```
-./most_active_cookie cookie_log.csv -d 2020-12-09
+./most_active_cookie cookie_log_two.csv -d 2020-12-09
 ```
 Expected Output:
 ```
