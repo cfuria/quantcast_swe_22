@@ -34,7 +34,7 @@ Test 4: No cookies logged.
 ```
 Expected Output:
 ```
-No date or log inputted.
+No cookies logged on this day.
 ```
 
 Test 5: One most common cookie.
